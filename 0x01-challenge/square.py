@@ -16,9 +16,9 @@ class Square:
       *args: Optional arguments (not used in this case).
       **kwargs: Keyword arguments (width and height).
     """
-    for key, value in kwargs.items():
-      setattr(self, key, value)
 
+  for key, value in kwargs.items():
+    setattr(self, key, value) 
   def area_of_my_square(self):
     """
     Calculates the area of the square.
