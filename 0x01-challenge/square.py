@@ -1,48 +1,50 @@
 #!/usr/bin/python3
 
 class Square:
+  """
+  This class represents a square.
+  """
+
+  width = 0
+  height = 0
+
+  def __init__(self, *args, **kwargs):
     """
-    This class represents a square shape with a side length.
+    Initialize the square with width and height.
+
+    Args:
+      *args: Optional arguments (not used in this case).
+      **kwargs: Keyword arguments (width and height).
     """
+    for key, value in kwargs.items():
+      setattr(self, key, value)
 
-    def __init__(self, side_length):
-        """
-        Initializes a new Square object.
+  def area_of_my_square(self):
+    """
+    Calculates the area of the square.
 
-        Args:
-            side_length (float): The length of a side of the square.
-        """
+    Returns:
+      The area of the square (width * width).
+    """
+    return self.width * self.width
 
-        self.side_length = side_length
+  def perimeter_of_my_square(self):
+    """
+    Calculates the perimeter of the square.
 
-    def area(self):
-        """
-        Calculates the area of the square.
+    Returns:
+      The perimeter of the square (2 * width + 2 * height).
+    """
+    return 2 * self.width + 2 * self.height
 
-        Returns:
-            float: The area of the square.
-        """
-
-        return self.side_length * self.side_length
-
-    def perimeter(self):
-        """
-        Calculates the perimeter of the square.
-
-        Returns:
-            float: The perimeter of the square.
-        """
-
-        return 4 * self.side_length
-
-    def __str__(self):
-"""
-        Returns a string representation of the square in the format "side_length".
-        """
-
-        return f"Square(side_length={self.side_length})"
+  def __str__(self):
+    """
+    Returns a string representation of the square (width/height).
+    """
+    return f"{self.width}/{self.height}"
 
 if __name__ == "__main__":
-    square1 = Square(10)
-    print(square1)  # Output: Square(side_length=10)
-    print(square1.area())  # Output: 100.0
+  s = Square(width=12, height=9)
+  print(s)  # Output: 12/9
+  print(s.area_of_my_square())  # Output: 144
+  print(s.perimeter_of_my_square())  # Output: 42
