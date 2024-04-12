@@ -35,13 +35,13 @@ class Square:
         Returns:
           The perimeter of the square (2 * width + 2 * height).
         """
-        return 2 * self.width + 2 * self.height
+        return (2 * self.width + 2 * self.height)
 
     def __str__(self):
         """
         Returns a string representation of the square (width/height).
         """
-        return "%d/%d" % (self.width, self.height)
+        return ("%d/%d" % (self.width, self.height))
 
 if __name__ == "__main__":
     s = Square(width=12, height=9)
